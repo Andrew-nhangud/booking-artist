@@ -5,7 +5,7 @@
       "name": "Ayumi Tanaka",
       "genre": "Classical",
       "location": "Japan",
-      " image": "https://images.pexels.com/photos/14749369/pexels-photo-14749369.jpeg",
+      "image": "https://images.pexels.com/photos/14749369/pexels-photo-14749369.jpeg",
       "socialLink": "https://instagram.com"
     },
     {
@@ -29,7 +29,7 @@
       "name": "Kwame Ndlovu",
       "genre": "Afrobeats",
       "location": "South Africa",
-      " image": "https://images.pexels.com/photos/8044949/pexels-photo-8044949.jpeg",
+      "image": "https://images.pexels.com/photos/8044949/pexels-photo-8044949.jpeg",
       "socialLink": "https://instagram.com"
     },
     {
@@ -45,7 +45,7 @@
       "name": "Mateo Balam",
       "genre": "Techno",
       "location": "Mexico",
-      " image": "https://images.pexels.com/photos/30640561/pexels-photo-30640561.jpeg",
+      "image": "https://images.pexels.com/photos/30640561/pexels-photo-30640561.jpeg",
       "socialLink": "https://instagram.com"
     },
     {
@@ -53,7 +53,7 @@
       "name": "Lena Marquez",
       "genre": "R&B",
       "location": "Spain",
-      " image": "https://images.pexels.com/photos/7062201/pexels-photo-7062201.jpeg",
+      "image": "https://images.pexels.com/photos/7062201/pexels-photo-7062201.jpeg",
       "socialLink": "https://soundcloud.com"
     },
     {
@@ -61,7 +61,7 @@
       "name": "Noah Fischer",
       "genre": "Jazz",
       "location": "Germany",
-      " image": "https://images.pexels.com/photos/30042523/pexels-photo-30042523.jpeg",
+      "image": "https://images.pexels.com/photos/30042523/pexels-photo-30042523.jpeg",
       "socialLink": "https://twitter.com"
     }
   ]
