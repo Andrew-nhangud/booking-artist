@@ -1,0 +1,79 @@
+.heading {
+  width: 80%;
+  line-height: 1;
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #4b5563;
+  margin-bottom: 35px;
+}
+
+/* styles for the container of the cards */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* styles for the image of the card */
+.card img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+/* styles for the name of the artist */
+.card h3 {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-top: 2px;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* styles for the location and genre */
+.card-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+/* styles for the location and genre */
+.card-info p {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  font-size: 1.1rem;
+  color: var(--small-text);
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-page {
+    padding-top: 110px;
+  }
+
+  .heading {
+    width: 50%;
+    font-size: 4.5rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
