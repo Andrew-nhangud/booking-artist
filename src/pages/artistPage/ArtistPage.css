@@ -1,0 +1,53 @@
+.artist-Pg {
+  padding-top: 100px;
+}
+
+.bck-btn {
+  font-size: 1.1rem;
+  color: var(--small-text);
+  margin-bottom: 1rem;
+}
+
+/* styles for the artist's image */
+.artist-img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+/* styles for the artist-details container */
+.artist-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* styles for the artist's name and location */
+.artist-name,
+.artist-location {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-top: 2px;
+  font-style: italic;
+  color: var(--text);
+}
+
+/* styles for the container of the artist's skills */
+.artist-skills {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* styles for the artist's genre and social link */
+.artist-social,
+.artist-genre {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  font-size: 1.1rem;
+  color: var(--small-text);
+  background-color: var(--text);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3rem;
+  margin-top: 10px;
+}
