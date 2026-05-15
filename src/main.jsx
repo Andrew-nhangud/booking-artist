@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./styles/global.css";
 import { Bookings } from "./pages/bookings/Bookings.jsx";
+import { ArtistPage } from "./pages/artistPage/ArtistPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Landing /> },
+      { path: "/artistPage/:id", element: <ArtistPage /> },
       { path: "/bookings", element: <Bookings /> },
     ],
   },
