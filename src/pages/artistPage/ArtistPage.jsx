@@ -1,12 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetchData";
+import { FormController } from "../../components/form/FormController";
 import "./ArtistPage.css";
 
 export const ArtistPage = () => {
-  const [data, isLoading, error] = useFetch("../../../data/dataBase.json");
   const { id } = useParams();
-
-  const d = data?.Artist?.find((d) => d.id === parseInt(id));
+  const [data, isLoading, error] = useFetch(
+    `http://localhost:5000/Artist/${id}`,
+  );
 
   return (
     <section className="container artist-Pg">
@@ -14,22 +15,26 @@ export const ArtistPage = () => {
         <button className="bck-btn">Back to Discovery</button>
       </Link>
 
-      {isLoading && <p>loading</p>}
-      <div key={d?.id}>
-        <img className="artist-img" src={d?.image} alt={d?.name} />
+      {isLoading && <p>Loading artist...</p>}
+
+      <div key={data?.id}>
+        <img className="artist-img" src={data?.image} alt={data?.name} />
         <div className="artist-details">
-          <p className="artist-name">{d?.name}</p>
-          <p className="artist-location">{d?.location}</p>
+          <p className="artist-name">{data?.name}</p>
+          <p className="artist-location">{data?.location}</p>
         </div>
 
         <div className="artist-skills">
-          <p className="artist-genre">{d?.genre}</p>
-          <Link className="Link" to={d?.socialLink}>
+          <p className="artist-genre">{data?.genre}</p>
+          <a className="Link" href={data?.socialLink} target="_blank">
             <button className="artist-social">social link</button>
-          </Link>
+          </a>
         </div>
       </div>
-      {error}
+
+      {!data && <p>Artist not found.</p>}
+
+      <FormController artistId={id} artistName={data?.name} />
     </section>
   );
 };
