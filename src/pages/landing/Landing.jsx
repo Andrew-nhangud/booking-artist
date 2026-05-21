@@ -5,7 +5,7 @@ import "./Landing.css";
 import { Link } from "react-router-dom";
 
 export const Landing = () => {
-  const [data, isLoading, error] = useFetch("../../../data/dataBase.json");
+  const [data, isLoading, error] = useFetch("http://localhost:5000/Artist");
 
   return (
     <section className="landing-page container">
@@ -16,7 +16,7 @@ export const Landing = () => {
       </p>
 
       <div className="card-container">
-        {data?.Artist?.map((d) => (
+        {data?.map((d) => (
           <div className="card" key={d.id}>
             {/* making the image to be clickable */}
             <Link to={`/artistPage/${d.id}`}>
