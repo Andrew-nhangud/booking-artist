@@ -16,25 +16,27 @@ export const ArtistPage = () => {
       </Link>
 
       {isLoading && <p>Loading artist...</p>}
-
-      <div key={data?.id}>
-        <img className="artist-img" src={data?.image} alt={data?.name} />
-        <div className="artist-details">
-          <p className="artist-name">{data?.name}</p>
-          <p className="artist-location">{data?.location}</p>
+      <div className="artist-info">
+        <div key={data?.id}>
+          <img className="artist-img" src={data?.image} alt={data?.name} />
+          <div className="artist-details">
+            <p className="artist-name">{data?.name}</p>
+            <p className="artist-location">{data?.location}</p>
+          </div>
+          <div className="artist-skills">
+            <p className="artist-genre">{data?.genre}</p>
+            <Link className="Link" href={data?.socialLink} target="_blank">
+              <button className="artist-social">
+                social <span>link</span>
+              </button>
+            </Link>
+          </div>
+          {!data && <p>Artist not found.</p>}
         </div>
 
-        <div className="artist-skills">
-          <p className="artist-genre">{data?.genre}</p>
-          <a className="Link" href={data?.socialLink} target="_blank">
-            <button className="artist-social">social link</button>
-          </a>
-        </div>
+        {/* calling the form component */}
+        <FormController artistId={id} artistName={data?.name} />
       </div>
-
-      {!data && <p>Artist not found.</p>}
-
-      <FormController artistId={id} artistName={data?.name} />
     </section>
   );
 };
