@@ -1,5 +1,6 @@
 .artist-Pg {
   padding-top: 100px;
+  padding-bottom: 50px;
 }
 
 .bck-btn {
@@ -41,13 +42,20 @@
 /* styles for the artist's genre and social link */
 .artist-social,
 .artist-genre {
-  display: flex;
-  flex-direction: row;
-  margin-top: 5px;
-  font-size: 1.1rem;
-  color: var(--small-text);
-  background-color: var(--text);
-  padding: 0.2rem 0.5rem;
-  border-radius: 3rem;
-  margin-top: 10px;
+  border-bottom: 1px solid var(--text);
+  font-size: 1.2rem;
+}
+.artist-social span {
+  font-style: italic;
+}
+
+.artist-genre {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .artist-info {
+    display: flex;
+    gap: 40px;
+  }
 }
