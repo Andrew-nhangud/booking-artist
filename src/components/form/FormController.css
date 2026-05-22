@@ -1,0 +1,73 @@
+.form {
+  margin-top: 1.5rem;
+}
+
+/* booking info */
+.booking-name {
+  font-size: 2rem;
+}
+.booking-name span {
+  font-style: italic;
+}
+
+/* form field */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+/* form labels styles */
+.form-fields label {
+  color: var(--small-text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  font-style: italic;
+}
+
+/* form input styles */
+.form-fields input,
+textarea {
+  border: 1px solid var(--small-text);
+
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+::placeholder {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  color: var(--text);
+}
+
+.submit-btn {
+  border-bottom: 1px solid var(--text);
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+.submit-btn span {
+  font-style: italic;
+}
+
+.error {
+  color: red;
+}
+
+@media (min-width: 768px) {
+  .form {
+    width: 55%;
+    margin-top: 0rem;
+  }
+
+  .form-fields {
+    width: 100%;
+  }
+  .combine-fields {
+    display: flex;
+    flex-direction: row;
+  }
+}
