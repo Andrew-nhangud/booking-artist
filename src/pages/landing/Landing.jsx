@@ -22,15 +22,25 @@ export const Landing = () => {
             <Link to={`/artistPage/${d.id}`}>
               <img src={d.image} alt={d.name} />
             </Link>
-
             <h3>{d.name}</h3>
+            {/* container for the artist's info */}
             <div className="card-info">
               <p>{d.genre}</p>
               <p>{d.location}</p>
             </div>
           </div>
         ))}
-        {isLoading && <p> loading..</p>}
+        {isLoading && (
+          <div className="loading-state">
+            <span className="spinner"></span>
+            <p>Loading artists…</p>
+          </div>
+        )}
+        {error && (
+          <p className="error">
+            please try <span>again later </span>
+          </p>
+        )}
       </div>
     </section>
   );
