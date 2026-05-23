@@ -65,7 +65,7 @@ export const FormController = ({ artistId, artistName }) => {
       console.error("Network connection error:", error);
       showStatus(
         "Could not connect to the database server. Is npm run server running?",
-        "error",
+        "connection",
       );
     }
   };
@@ -75,8 +75,11 @@ export const FormController = ({ artistId, artistName }) => {
       <p className="booking-name">
         Request a <span>booking</span>
       </p>
+
+      {/* form */}
       <form onSubmit={handleSubmit(onSubmit)} className="container-form">
         <div className="combine-fields">
+          {/* date form field */}
           <div className="form-fields">
             <label htmlFor="date">Event Date</label>
             <input
@@ -86,6 +89,8 @@ export const FormController = ({ artistId, artistName }) => {
             />
             {errors.date && <p className="error">{errors.date.message}</p>}
           </div>
+
+          {/* time form field */}
           <div className="form-fields">
             <label htmlFor="time">Start Time</label>
             <input
@@ -97,6 +102,7 @@ export const FormController = ({ artistId, artistName }) => {
           </div>
         </div>
 
+        {/* event type form field */}
         <div className="combine-fields">
           <div className="form-fields">
             <label htmlFor="event">Event Type</label>
@@ -112,6 +118,7 @@ export const FormController = ({ artistId, artistName }) => {
             {errors.event && <p className="error">{errors.event.message}</p>}
           </div>
 
+          {/* duration form field */}
           <div className="form-fields">
             <label htmlFor="duration">Duration (Hours)</label>
             <input
@@ -130,6 +137,7 @@ export const FormController = ({ artistId, artistName }) => {
           </div>
         </div>
 
+        {/* venue / location form field */}
         <div className="form-fields">
           <label htmlFor="location">Vunue / Location</label>
           <input
@@ -146,6 +154,7 @@ export const FormController = ({ artistId, artistName }) => {
           )}
         </div>
 
+        {/* name form fields */}
         <div className="combine-fields">
           <div className="form-fields">
             <label htmlFor="name">Full Name</label>
@@ -161,6 +170,7 @@ export const FormController = ({ artistId, artistName }) => {
             {errors.name && <p className="error">{errors.name.message}</p>}
           </div>
 
+          {/* phone number form field */}
           <div className="form-fields">
             <label htmlFor="PhoneNumber">Phone Number</label>
             <input
@@ -182,6 +192,7 @@ export const FormController = ({ artistId, artistName }) => {
           </div>
         </div>
 
+        {/* email form field */}
         <div className="form-fields">
           <label htmlFor="email">Email Address</label>
           <input
@@ -198,6 +209,7 @@ export const FormController = ({ artistId, artistName }) => {
           />
           {errors.email && <p className="error">{errors.email.message}</p>}
         </div>
+        {/* message form field */}
         <div className="form-fields">
           <label htmlFor="message">Additional Message</label>
           <textarea
@@ -218,6 +230,7 @@ export const FormController = ({ artistId, artistName }) => {
           </div>
         )}
 
+        {/* submit button */}
         <button type="submit" className="submit-btn">
           sub<span>mit</span>
         </button>
