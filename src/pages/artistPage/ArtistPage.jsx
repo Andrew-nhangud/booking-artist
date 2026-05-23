@@ -15,7 +15,6 @@ export const ArtistPage = () => {
         <button className="bck-btn">Back to Discovery</button>
       </Link>
 
-      {isLoading && <p>Loading artist...</p>}
       <div className="artist-info">
         <div key={data?.id}>
           <img className="artist-img" src={data?.image} alt={data?.name} />
@@ -30,6 +29,19 @@ export const ArtistPage = () => {
                 social <span>link</span>
               </button>
             </Link>
+
+            {/* state to show the user if the data is loading or if there's an error */}
+            {isLoading && (
+              <div className="loading-state">
+                <span className="spinner"></span>
+                <p>Loading artists…</p>
+              </div>
+            )}
+            {error && (
+              <p className="error">
+                please try <span>again later </span>
+              </p>
+            )}
           </div>
           {!data && <p>Artist not found.</p>}
         </div>
