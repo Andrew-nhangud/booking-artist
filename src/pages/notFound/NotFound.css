@@ -1,0 +1,21 @@
+/*the container for the notfound page*/
+.notfound-container {
+  padding-top: 130px; /*to push the content below the navbar*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*styles for the message*/
+.notfound-message {
+  font-size: 2.5rem;
+}
+
+/* styles for the home link */
+.home-link {
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--text);
+}
+.home-link span {
+  font-style: italic;
+}
