@@ -1,3 +1,4 @@
+/* FormController*/
 .form {
   margin-top: 1.5rem;
 }
@@ -37,6 +38,7 @@ textarea {
   border-radius: 1rem;
 }
 
+/* styles for the placeholder text in the form fields */
 ::placeholder {
   font-size: 0.9rem;
   letter-spacing: 0.1rem;
@@ -44,6 +46,7 @@ textarea {
   color: var(--text);
 }
 
+/* styles for the submit button */
 .submit-btn {
   border-bottom: 1px solid var(--text);
   font-size: 1.5rem;
@@ -55,17 +58,49 @@ textarea {
 
 .error {
   color: red;
+  margin: 0rem; /* removes the margin for error messages */
+}
+
+/*status message styles*/
+.statusMessage {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+/* styles for the success status message */
+.statusMessage.success {
+  background: #ecfdf5;
+  border-color: #34d399;
+  color: #065f46;
+}
+/* styles for the error status message */
+.statusMessage.error {
+  background: #fef2f2;
+  border-color: #f87171;
+  color: #991b1b;
+}
+/* styles for the connection error status message */
+.statusMessage.connection {
+  background: #fff7ed;
+  border-color: #fb923c;
+  color: #9a3412;
 }
 
 @media (min-width: 768px) {
+  /*  styles for the form container */
   .form {
-    width: 55%;
+    width: 55%; /* sets a fixed width for the form on larger screens */
     margin-top: 0rem;
   }
-
+  /* styles for the form fields */
   .form-fields {
     width: 100%;
   }
+  /* styles for the form labels and inputs */
   .combine-fields {
     display: flex;
     flex-direction: row;
