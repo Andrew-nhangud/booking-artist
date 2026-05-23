@@ -15,6 +15,7 @@
 .home-link {
   font-size: 1.2rem;
   border-bottom: 1px solid var(--text);
+  cursor: pointer;
 }
 .home-link span {
   font-style: italic;
