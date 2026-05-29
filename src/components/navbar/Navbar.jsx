@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useFetch } from "../../hooks/useFetchData";
 import "./Navbar.css";
 
 export const Navbar = () => {
+  const [data, isLoading, error] = useFetch("http://localhost:5000/bookings");
   return (
     <nav className="navlinks container">
       <ul>
@@ -13,7 +15,7 @@ export const Navbar = () => {
         <Link className="Link" to="/bookings">
           <div className="booking-container">
             <li className="bookings">Bookings</li>
-            <div className="notify">2</div>
+            <div className="notify">{data?.length} </div>
           </div>
         </Link>
       </ul>
