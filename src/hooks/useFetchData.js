@@ -19,8 +19,7 @@ export const useFetch = (url) => {
         setData(data);
       } catch (e) {
         // errpr message will be console.log
-        setError(e.message);
-        console.log(e);
+        return;
       } finally {
         // setting the loading state to be false after data is fetched
         setIsLoading(false);
