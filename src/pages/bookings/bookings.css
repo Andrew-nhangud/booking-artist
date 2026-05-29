@@ -1,0 +1,93 @@
+.booking {
+  padding-top: 100px;
+}
+
+.booking-card {
+  border: 1px solid var(--text);
+  padding: 10px;
+  margin-bottom: 1rem;
+}
+
+.artistName {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 0.4rem;
+}
+.artistName span {
+  background-color: #fef9c3;
+  border: 1px solid #fef08a;
+  border-radius: 1rem;
+  color: #854d0e;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: 0.25rem 0.63rem;
+}
+
+.booking-detail {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  color: var(--small-text);
+}
+
+.booking-lables {
+  font-style: italic;
+  color: var(--text);
+}
+
+.booking-btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.booking-btns button {
+  font-size: 0.88rem;
+  line-height: 1.3;
+  padding: 0.5rem 1rem;
+}
+.cancel-btn {
+  border: 1px solid tomato;
+}
+.delete-btn {
+  background-color: tomato;
+  color: var(--bg);
+}
+
+@media (min-width: 768px) {
+  .row-placer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .booking-btns {
+    display: flex;
+    flex-direction: column;
+  }
+  .row-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .row-placer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 100px;
+  }
+  .artistName {
+    font-size: 2rem;
+  }
+  .booking-detail {
+    font-size: 1.4rem;
+  }
+  .booking-btns button {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    padding: 0.5rem 1rem;
+  }
+}
