@@ -1,0 +1,34 @@
+/*Container for the search bar*/
+.search-bar-container {
+  margin-bottom: 40px; /*adding space at the bottom */
+}
+
+/*input field for the searach bar*/
+#search {
+  width: 75%; /*setting the input field to be 75% long*/
+  padding: 0.5rem 0.2rem; /*adding space in the input field*/
+  border: 1px solid var(--small-text);
+  border-radius: 1rem;
+  margin-left: 0.5rem; /*pushing the input filed to the right*/
+}
+
+/*label fo rthe search bar*/
+.search-label {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+@media (min-width: 1024px) {
+  /*input field for the searach bar*/
+  #search {
+    width: 60%; /*setting the input field to be 75% long*/
+    padding: 0.9rem 0.2rem; /*adding space in the input field*/
+    border-radius: 2rem;
+  }
+
+  /*label fo rthe search bar*/
+  .search-label {
+    font-size: 1.3rem;
+    font-style: italic;
+  }
+}
