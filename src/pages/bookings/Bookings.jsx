@@ -4,8 +4,6 @@ import "./bookings.css";
 
 export const Bookings = () => {
   const [data, isLoading, error] = useFetch("http://localhost:5000/bookings");
-  const [status, setStatus] = useState("pending");
-  const [btnChange, setBtnChange] = useState("cancel");
 
   //
   const handleDelection = async (id) => {
@@ -28,57 +26,51 @@ export const Bookings = () => {
     }
   };
 
-  const handleChange = () => {
-    if (status === "pending") {
-      setStatus("cancelled");
-    }
-  };
-
   return (
     <section className="booking container">
-      {data?.map((d) => (
-        <div className="booking-card">
-          <p className="artistName">
-            {d?.artistName} <span>{status} </span>
-          </p>
-          <div className="row-placer">
-            {/*  */}
-            <div className="row-fields">
-              <p className="booking-detail">
-                <span className="booking-lables">Date: </span> {d?.date}
+      {data?.length === 0
+        ? "the are no bookings as of yet"
+        : data?.map((d) => (
+            <div key={d.id} className="booking-card">
+              <p className="artistName">
+                {d?.artistName} <span>pending </span>
               </p>
-              <p className="booking-detail">
-                <span className="booking-lables">Time: </span>
-                {d?.time} ({d?.duration} hrs)
-              </p>
-            </div>
+              <div className="row-placer">
+                {/*  */}
+                <div className="row-fields">
+                  <p className="booking-detail">
+                    <span className="booking-lables">Date: </span> {d?.date}
+                  </p>
+                  <p className="booking-detail">
+                    <span className="booking-lables">Time: </span>
+                    {d?.time} ({d?.duration} hrs)
+                  </p>
+                </div>
 
-            {/*  */}
-            <div className="row-fields">
-              <p className="booking-detail">
-                <span className="booking-lables">Location: </span>
-                {d?.location}
-              </p>
-              <p className="booking-detail">
-                <span className="booking-lables">Booker: </span>
-                {d?.name} <span>.</span> {d?.event}
-              </p>
-            </div>
+                {/*  */}
+                <div className="row-fields">
+                  <p className="booking-detail">
+                    <span className="booking-lables">Location: </span>
+                    {d?.location}
+                  </p>
+                  <p className="booking-detail">
+                    <span className="booking-lables">Booker: </span>
+                    {d?.name} <span>.</span> {d?.event}
+                  </p>
+                </div>
 
-            <div className="booking-btns">
-              <button className="cancel-btn" onClick={handleChange}>
-                {btnChange}
-              </button>
-              <button
-                className="delete-btn"
-                onClick={() => handleDelection(d.id)}
-              >
-                Delete
-              </button>
+                <div className="booking-btns">
+                  <button className="cancel-btn">cancelled</button>
+                  <button
+                    className="delete-btn"
+                    onClick={() => handleDelection(d.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
+          ))}
     </section>
   );
 };
