@@ -6,7 +6,7 @@ import "./ArtistPage.css";
 export const ArtistPage = () => {
   const { id } = useParams();
   const [data, isLoading, error] = useFetch(
-    `http://localhost:5000/Artist/${id}`,
+    `https://booking-artist.onrender.com/Artist/${id}`,
   );
 
   return (

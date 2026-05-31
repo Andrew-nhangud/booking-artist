@@ -3,7 +3,9 @@ import { useFetch } from "../../hooks/useFetchData";
 import "./Navbar.css";
 
 export const Navbar = () => {
-  const [data, isLoading, error] = useFetch("http://localhost:5000/bookings");
+  const [data, isLoading, error] = useFetch(
+    "https://booking-artist.onrender.com/bookings",
+  );
   return (
     <nav className="navlinks container">
       <ul>

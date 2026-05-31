@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 import "./Landing.css";
 
 export const Landing = () => {
-  const [data, isLoading, error] = useFetch("http://localhost:5000/Artist");
+  const [data, isLoading, error] = useFetch(
+    "https://booking-artist.onrender.com/Artist",
+  );
 
   // State to track what the user is typing instantly
   const [searchTerm, setSearchTerm] = useState("");

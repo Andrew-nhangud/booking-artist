@@ -44,13 +44,16 @@ export const FormController = ({ artistId, artistName }) => {
       ...formData,
     };
     try {
-      const response = await fetch("http://localhost:5000/bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://booking-artist.onrender.com/bookings",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newBooking),
         },
-        body: JSON.stringify(newBooking),
-      });
+      );
 
       if (response.ok) {
         reset();

@@ -3,15 +3,20 @@ import { useFetch } from "../../hooks/useFetchData";
 import "./bookings.css";
 
 export const Bookings = () => {
-  const [data, isLoading, error] = useFetch("http://localhost:5000/bookings");
+  const [data, isLoading, error] = useFetch(
+    "https://booking-artist.onrender.com/bookings",
+  );
 
   //
   const handleDelection = async (id) => {
     try {
       // 1. Send a DELETE request to your API with the specific booking ID
-      const response = await fetch(`http://localhost:5000/bookings/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://booking-artist.onrender.com/bookings/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
 
       // 2. Check if the server successfully deleted the item
       if (response.ok) {
