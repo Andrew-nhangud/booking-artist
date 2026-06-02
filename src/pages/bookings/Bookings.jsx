@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFetch } from "../../hooks/useFetchData";
 import "./bookings.css";
 
@@ -7,7 +7,29 @@ export const Bookings = () => {
     "https://booking-artist.onrender.com/bookings",
   );
 
-  //
+  // Local state to manage UI updates dynamically
+  const [bookingsList, setBookingsList] = useState([]);
+
+  // Sync custom hook data to local state when it arrives
+  useEffect(() => {
+    if (data) {
+      const initialBookings = data.map((item) => ({
+        ...item,
+        status: item.status || "pending", // fallback to pending if status isn't in DB
+      }));
+      setBookingsList(initialBookings);
+    }
+  }, [data]);
+
+  // Handle Cancel Button Click
+  const handleCancel = (id) => {
+    setBookingsList((prevList) =>
+      prevList.map((item) =>
+        item.id === id ? { ...item, status: "cancelled" } : item,
+      ),
+    );
+  };
+
   const handleDelection = async (id) => {
     try {
       // 1. Send a DELETE request to your API with the specific booking ID
@@ -21,7 +43,10 @@ export const Bookings = () => {
       // 2. Check if the server successfully deleted the item
       if (response.ok) {
         alert("Booking deleted successfully!");
-        // Optional: Refresh your page or state here to update the UI
+        // Update local state to instantly remove item from UI
+        setBookingsList((prevList) =>
+          prevList.filter((item) => item.id !== id),
+        );
       } else {
         alert("Failed to delete booking.");
       }
@@ -33,15 +58,15 @@ export const Bookings = () => {
 
   return (
     <section className="booking container">
-      {data?.length === 0
+      {bookingsList.length === 0
         ? "the are no bookings as of yet"
-        : data?.map((d) => (
+        : bookingsList.map((d) => (
             <div key={d.id} className="booking-card">
               <p className="artistName">
-                {d?.artistName} <span>pending </span>
+                {d?.artistName} {/* 1. Dynamic status text based on state */}
+                <span>{d.status} </span>
               </p>
               <div className="row-placer">
-                {/*  */}
                 <div className="row-fields">
                   <p className="booking-detail">
                     <span className="booking-lables">Date: </span> {d?.date}
@@ -52,7 +77,6 @@ export const Bookings = () => {
                   </p>
                 </div>
 
-                {/*  */}
                 <div className="row-fields">
                   <p className="booking-detail">
                     <span className="booking-lables">Location: </span>
@@ -65,7 +89,15 @@ export const Bookings = () => {
                 </div>
 
                 <div className="booking-btns">
-                  <button className="cancel-btn">cancelled</button>
+                  {/* 2. Button disappears if status is cancelled */}
+                  {d.status !== "cancelled" && (
+                    <button
+                      className="cancel-btn"
+                      onClick={() => handleCancel(d.id)}
+                    >
+                      cancel
+                    </button>
+                  )}
                   <button
                     className="delete-btn"
                     onClick={() => handleDelection(d.id)}
